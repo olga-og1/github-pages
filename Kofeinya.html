@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodExpress - Доставка еды за 15 минут</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #FF6B6B;
+            --secondary: #4ECDC4;
+            --light: #F7FFF7;
+            --dark: #2F4858;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            height: 100vh;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--light);
+            padding: 20px;
+        }
+
+        /* CTA Button */
+        .cta-btn {
+            background: var(--primary);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.3s;
+            display: inline-block;
+            margin-top: 30px;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Food Grid */
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 50px 5%;
+        }
+
+        .food-card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .food-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .food-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="header">
+        <div class="hero-content">
+            <h1 style="font-family: 'Pacifico', cursive; font-size: 4rem;">FoodExpress</h1>
+            <p class="tagline">Свежие блюда за 15 минут</p>
+            <a href="#order" class="cta-btn">Выбрать меню</a>
+        </div>
+    </header>
+
+    <!-- Food Grid -->
+    <section class="food-grid">
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1565958011705-4faaa1b6d378" alt="Бургер" style="width:100%; height:200px; object-fit: cover;">
+            <div class="food-info" style="padding: 15px;">
+                <h3>Премиум бургер</h3>
+                <p>180г говядины, сыр чеддер, свежие овощи</p>
+                <button class="cta-btn" style="margin-top: 10px; padding: 10px 25px;">Заказать →</button>
+            </div>
+        </div>
+        <!-- Repeat food-card blocks for other items -->
+    </section>
+
+    <!-- About Section -->
+    <section style="background: var(--light); padding: 50px 5%; text-align: center;">
+        <h2 style="color: var(--dark); margin-bottom: 30px;">Почему мы?</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+            <div class="benefit">
+                <h3>🚀 15-минутная доставка</h3>
+                <p>Гарантируем доставку или еда бесплатно</p>
+            </div>
+            <!-- Add other benefits -->
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section style="padding: 50px 5%; background: var(--secondary);">
+        <form style="max-width: 500px; margin: 0 auto;">
+            <input type="text" placeholder="Имя" style="width:100%; padding: 12px; margin: 10px 0;">
+            <input type="email" placeholder="Email" style="width:100%; padding: 12px; margin: 10px 0;">
+            <textarea style="width:100%; height: 150px; padding: 12px;" placeholder="Сообщение"></textarea>
+            <button class="cta-btn" type="submit" style="background: var(--primary); border: none; cursor: pointer;">
+                Отправить
+            </button>
+        </form>
+    </section>
+</body>
+</html>
